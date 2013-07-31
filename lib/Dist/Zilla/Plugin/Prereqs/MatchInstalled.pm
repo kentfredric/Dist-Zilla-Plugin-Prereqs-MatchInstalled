@@ -20,13 +20,13 @@ has applyto_phase => (
   is => ro =>,
   isa => ArrayRef [Str] =>,
   lazy    => 1,
-  default => sub { [qw(build test runtime configure develop)] }
+  default => sub { [qw(build test runtime configure develop)] },
 );
 
 has applyto_relation => (
   is => ro => isa => ArrayRef [Str],
   lazy    => 1,
-  default => sub { [qw(requires recommends suggests)] }
+  default => sub { [qw(requires recommends suggests)] },
 );
 
 has applyto => (
@@ -46,7 +46,7 @@ has modules => (
   is => ro =>,
   isa => ArrayRef [Str],
   lazy    => 1,
-  default => sub { [] }
+  default => sub { [] },
 );
 has _modules_hash => (
   is      => ro                   =>,
@@ -70,11 +70,11 @@ sub _build__applyto_list {
   my $self = shift;
   my @out;
   for my $type ( @{ $self->applyto } ) {
-    if ( $type =~ /^([^.]+)[.]([^.]+)$/ ) {
+    if ( $type =~ /^ ([^.]+) [.] ([^.]+) $/msx ) {
       push @out, [ "$1", "$2" ];
       next;
     }
-    die "<<$type>> does not match << <phase>.<relation> >>";
+    return $self->log_fatal(["<<%s>> does not match << <phase>.<relation> >>", $type ]);
   }
   return \@out;
 }
@@ -128,10 +128,9 @@ sub register_prereqs {
       next if not exists $self->_modules_hash->{$module};
       my $latest = $self->current_version_of($module);
       if ( not defined $latest ) {
-        warn "You asked for the installed version of $module, and it is a dependency but it is apparently not installed";
+        $self->log([q[You asked for the installed version of %s, and it is a dependency but it is apparently not installed], $module ]);
         next;
       }
-
       $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $latest );
     }
   }
@@ -183,7 +182,7 @@ By default, dependencies that match values of C<module> will be upgraded when th
     phase: build, test, runtime, configure, develop
     relation: depends, suggests, recommends
 
-To change this behaviour, specify one or more of the following parameters:
+To change this behavior, specify one or more of the following parameters:
 
     applyto_phase = build
     applyto_phase = configure
@@ -206,7 +205,13 @@ For instance,
     module = strict
     module = warning
 
-Will both upgrade the strict and warnings deps on your module, regardless of how daft an idea that may be.
+Will both upgrade the strict and warnings dependencies on your module, regardless of how daft an idea that may be.
+
+And with a little glue
+
+    module = perl
+
+Does what you want, but you probably shouldn't rely on that =).
 
 =begin MetaPOD::JSON v1.1.0
 
