@@ -86,7 +86,9 @@ sub mvp_aliases{  return { 'module' => 'modules' }  }
 sub current_version_of {
     my ($self, $package ) = @_;
     require Module::Data;
-    return Module::Data->new($package)->version;
+    my $data = Module::Data->new($package);
+    return if not $data;
+    return $data->version;
 }
 around dump_config => sub {
     my ( $orig, $self ) = @_;
@@ -115,6 +117,11 @@ sub register_prereqs {
         for my $module ( keys %{ $reqs }) {
             next if not exists $self->_modules_hash->{$module};
             my $latest = $self->current_version_of( $module );
+            if ( not defined $latest ) {
+                warn "You asked for the installed version of $module, and it is a dependency but it is apparently not installed";
+                next;
+            }
+
             $zilla->register_prereqs(
                 { phase => $phase, type => $rel },
                 $module, $latest
