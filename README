@@ -1,0 +1,168 @@
+NAME
+    Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of
+    modules the same as you have installed
+
+VERSION
+    version 0.1.0
+
+SYNOPSIS
+    This is based on the code of
+    "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective", but
+    intended for a wider audience.
+
+        [Prereqs::MatchInstalled]
+        module = My::Module
+
+    NOTE: Dependencies will only be upgraded to match the *Installed*
+    version if they're found elsewhere in the dependency tree.
+
+    This is designed so that it integrates with other automated version
+    provisioning.
+
+    If you're hard-coding module dependencies instead, you will want to
+    place this module *after* other modules that declare dependencies.
+
+    For instance:
+
+        [Prereqs]
+        Foo = 0
+
+        [Prereqs::MatchInstalled]
+        module = Foo
+
+    ^^ "Foo" will be upgraded to the version installed.
+
+    By default, dependencies that match values of "module" will be upgraded
+    when they are found in:
+
+        phase: build, test, runtime, configure, develop
+        relation: depends, suggests, recommends
+
+    To change this behavior, specify one or more of the following
+    parameters:
+
+        applyto_phase = build
+        applyto_phase = configure
+
+        applyto_relation = requires
+
+    etc.
+
+    For more complex demands, this also works:
+
+        applyto = build.requires
+        applyto = configure.recommends
+
+    And that should hopefully be sufficient to cover any conceivable
+    use-case.
+
+    Also note, we don't do any sort of sanity checking on the module list
+    you provide.
+
+    For instance,
+
+        module = strict
+        module = warning
+
+    Will both upgrade the strict and warnings dependencies on your module,
+    regardless of how daft an idea that may be.
+
+    And with a little glue
+
+        module = perl
+
+    Does what you want, but you probably shouldn't rely on that =).
+
+METHODS
+  mvp_multivalue_args
+    The following properties can be specified multiple times:
+
+    *   "applyto"
+
+    *   "applyto_relation"
+
+    *   "applyto_phase"
+
+    *   "modules"
+
+  "mvp_aliases"
+    The "module" is an alias for "modules"
+
+  "current_version_of"
+        $self->current_version_of($package);
+
+    Attempts to find the current version of $package.
+
+    Returns "undef" if something went wrong.
+
+  "register_prereqs"
+    This is for "Dist::Zilla::Role::PrereqSource", which gets new
+    prerequisites from this module.
+
+ATTRIBUTES
+  "applyto_phase"
+    Determines which phases will be checked for module dependencies to
+    upgrade.
+
+        [Prereqs::MatchInstalled]
+        applyto_phase = build
+        applyto_phase = test
+
+    Defaults to:
+
+        build test runtime configure develop
+
+  "applyto_relation"
+    Determines which relations will be checked for module dependencies to
+    upgrade.
+
+        [Prereqs::MatchInstalled]
+        applyto_relation = requires
+
+    Defaults to:
+
+        requires suggests recommends
+
+  "applyto"
+    Determines the total list of "phase"/"relation" combinations which will
+    be checked for dependencies to upgrade.
+
+    If not specified, is built from "applyto_phase" and "applyto_relation"
+
+        [Prereqs::MatchInstalled]
+        applyto = runtime.requires
+        applyto = configure.requires
+
+  "modules"
+    Contains the list of modules that will be searched for in the existing
+    "Prereqs" stash to upgrade.
+
+        [Prereqs::MatchInstalled]
+        module = Foo
+        module = Bar
+        modules = Baz ; this is the same as the previous 2
+
+PRIVATE ATTRIBUTES
+  "_applyto_list"
+    Internal.
+
+    Contains the contents of "applyto" represented as an
+    "ArrayRef[ArrayRef[Str]]"
+
+  "_modules_hash"
+    Contains a copy of "modules" as a hash for easy look-up.
+
+PRIVATE METHODS
+  _build_applyto
+  _build_applyto_list
+  _build__modules_hash
+AUTHOR
+    Kent Fredric <kentfredric@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2013 by Kent Fredric
+    <kentfredric@gmail.com>.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+

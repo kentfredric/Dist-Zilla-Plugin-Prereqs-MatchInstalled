@@ -1,0 +1,4 @@
+Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
+
+0.1.0 2013-07-31T15:59:15Z
+ - First version. Dogfood friendly, but no tests.
