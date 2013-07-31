@@ -81,7 +81,7 @@ sub _build__applyto_list {
 
 sub _build__modules_hash {
   my $self = shift;
-  return { map { $_, 1 } @{ $self->modules } };
+  return { map { ( $_, 1 ) } @{ $self->modules } };
 }
 sub mvp_multivalue_args { return qw(applyto applyto_relation applyto_phase modules) }
 sub mvp_aliases { return { 'module' => 'modules' } }
