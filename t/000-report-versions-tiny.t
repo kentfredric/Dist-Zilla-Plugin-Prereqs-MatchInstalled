@@ -59,12 +59,12 @@ eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('MooseX::Types::Moose','any version') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('Test::CPAN::Changes','0.19') };
-eval { $v .= pmver('Test::CPAN::Meta','any version') };
+eval { $v .= pmver('Test::CPAN::Meta','0.23') };
 eval { $v .= pmver('Test::More','0.98') };
-eval { $v .= pmver('Test::Pod','1.41') };
+eval { $v .= pmver('Test::Pod','1.48') };
 eval { $v .= pmver('Test::Pod::Coverage','1.08') };
 eval { $v .= pmver('strict','any version') };
-eval { $v .= pmver('version','0.9901') };
+eval { $v .= pmver('version','0.9902') };
 eval { $v .= pmver('warnings','any version') };
 
 

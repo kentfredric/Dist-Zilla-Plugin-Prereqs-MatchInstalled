@@ -297,16 +297,24 @@ x_Dist_Zilla:
             - configure.requires
             - configure.recommends
             - configure.suggests
+            - develop.requires
+            - develop.recommends
+            - develop.suggests
           applyto_phase:
             - build
             - test
             - runtime
             - configure
+            - develop
           applyto_relation:
             - requires
             - recommends
             - suggests
-          modules: []
+          modules:
+            - Dist::Zilla::PluginBundle::Author::KENTNL
+            - Test::Pod
+            - version
+            - Test::CPAN::Meta
       name: Prereqs::MatchInstalled
       version: ~
     -

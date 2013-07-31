@@ -20,7 +20,7 @@ has applyto_phase => (
     is => ro =>,
     isa => ArrayRef[Str] =>,
     lazy => 1,
-    default => sub { [qw(build test runtime configure)] }
+    default => sub { [qw(build test runtime configure develop)] }
 );
 
 has applyto_relation => ( 
@@ -81,8 +81,8 @@ sub _build__modules_hash {
     my $self = shift;
     return { map { $_ , 1 } @{ $self->modules } };
 }
-sub mvp_multivalue_args { qw(applyto applyto_relation applyto_phase module) }
-
+sub mvp_multivalue_args { qw(applyto applyto_relation applyto_phase modules) }
+sub mvp_aliases{  return { 'module' => 'modules' }  }
 sub current_version_of {
     my ($self, $package ) = @_;
     require Module::Data;
