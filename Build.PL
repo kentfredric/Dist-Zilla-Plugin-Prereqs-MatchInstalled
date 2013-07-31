@@ -27,9 +27,9 @@ my %module_build_args = (
     "Module::Data" => 0,
     "Moose" => 0,
     "MooseX::Types::Moose" => 0,
-    "perl" => "5.018000",
-    "strict" => "1.07",
-    "warnings" => "1.18"
+    "perl" => "v5.10.0",
+    "strict" => 0,
+    "warnings" => 0
   },
   "script_files" => [],
   "test_requires" => {
