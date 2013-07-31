@@ -87,14 +87,11 @@ sub current_version_of {
     my ($self, $package ) = @_;
     if ( $package eq 'perl' ){
         # Thats not going to work, Dave.
-        return;
+        return $];
     }
     require Module::Data;
     my $data = Module::Data->new($package);
     return if not $data;
-    if ( $data->path ){
-        warn $data->path;
-    }
     return $data->version;
 }
 around dump_config => sub {
