@@ -387,56 +387,6 @@
             "class" : "Dist::Zilla::Plugin::Prereqs::MatchInstalled",
             "config" : {
                "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : {
-                  "_applyto_list" : [
-                     [
-                        "build",
-                        "requires"
-                     ],
-                     [
-                        "build",
-                        "recommends"
-                     ],
-                     [
-                        "build",
-                        "suggests"
-                     ],
-                     [
-                        "test",
-                        "requires"
-                     ],
-                     [
-                        "test",
-                        "recommends"
-                     ],
-                     [
-                        "test",
-                        "suggests"
-                     ],
-                     [
-                        "runtime",
-                        "requires"
-                     ],
-                     [
-                        "runtime",
-                        "recommends"
-                     ],
-                     [
-                        "runtime",
-                        "suggests"
-                     ],
-                     [
-                        "configure",
-                        "requires"
-                     ],
-                     [
-                        "configure",
-                        "recommends"
-                     ],
-                     [
-                        "configure",
-                        "suggests"
-                     ]
-                  ],
                   "applyto" : [
                      "build.requires",
                      "build.recommends",

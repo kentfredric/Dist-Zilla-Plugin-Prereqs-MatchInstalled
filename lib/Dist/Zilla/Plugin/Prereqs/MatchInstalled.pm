@@ -95,7 +95,6 @@ around dump_config => sub {
         applyto_phase => $self->applyto_phase,
         applyto_relation => $self->applyto_relation,
         applyto          => $self->applyto,
-        _applyto_list    => $self->_applyto_list,
         modules => $self->modules,
     };
     $config->{'' . __PACKAGE__ } = $this_config;
