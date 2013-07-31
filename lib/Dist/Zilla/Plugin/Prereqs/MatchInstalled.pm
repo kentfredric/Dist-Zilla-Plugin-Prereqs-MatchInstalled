@@ -124,7 +124,7 @@ around dump_config => sub {
     applyto          => $self->applyto,
     modules          => $self->modules,
   };
-  $config->{ '' . __PACKAGE__ } = $this_config;
+  $config->{ q{} . __PACKAGE__ } = $this_config;
   return $config;
 };
 
@@ -260,7 +260,7 @@ The C<module> is an alias for C<modules>
 
 Attempts to find the current version of C<$package>.
 
-Returns undef if something went wrong.
+Returns C<undef> if something went wrong.
 
 =head2 C<register_prereqs>
 
@@ -321,7 +321,7 @@ Contains the contents of L<< C<applyto>|/applyto >> represented as an C<ArrayRef
 
 =head2 C<_modules_hash>
 
-Contains a copy of L<< C<modules>|/modules >> as a hash for easy lookup.
+Contains a copy of L<< C<modules>|/modules >> as a hash for easy look-up.
 
 =head1 PRIVATE METHODS
 

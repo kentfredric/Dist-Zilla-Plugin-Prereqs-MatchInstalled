@@ -93,7 +93,7 @@ METHODS
 
     Attempts to find the current version of $package.
 
-    Returns undef if something went wrong.
+    Returns "undef" if something went wrong.
 
   "register_prereqs"
     This is for "Dist::Zilla::Role::PrereqSource", which gets new
@@ -150,7 +150,7 @@ PRIVATE ATTRIBUTES
     "ArrayRef[ArrayRef[Str]]"
 
   "_modules_hash"
-    Contains a copy of "modules" as a hash for easy lookup.
+    Contains a copy of "modules" as a hash for easy look-up.
 
 PRIVATE METHODS
   _build_applyto
