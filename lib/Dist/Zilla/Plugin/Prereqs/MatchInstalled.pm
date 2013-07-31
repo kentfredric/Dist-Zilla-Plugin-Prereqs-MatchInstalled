@@ -74,7 +74,7 @@ sub _build__applyto_list {
       push @out, [ "$1", "$2" ];
       next;
     }
-    return $self->log_fatal(["<<%s>> does not match << <phase>.<relation> >>", $type ]);
+    return $self->log_fatal([q[<<%s>> does not match << <phase>.<relation> >>], $type ]);
   }
   return \@out;
 }
@@ -83,7 +83,7 @@ sub _build__modules_hash {
   my $self = shift;
   return { map { $_, 1 } @{ $self->modules } };
 }
-sub mvp_multivalue_args { qw(applyto applyto_relation applyto_phase modules) }
+sub mvp_multivalue_args { return qw(applyto applyto_relation applyto_phase modules) }
 sub mvp_aliases { return { 'module' => 'modules' } }
 
 sub current_version_of {
@@ -134,6 +134,7 @@ sub register_prereqs {
       $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $latest );
     }
   }
+  return $prereqs;
 }
 __PACKAGE__->meta->make_immutable;
 no Moose;
@@ -165,7 +166,7 @@ B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if
 
 This is designed so that it integrates with other automated version provisioning.
 
-If you're hard-coding module deps instead, you will want to place this module I<after> other modules that declare deps.
+If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare dependencies.
 
 For instance:
 
@@ -196,7 +197,7 @@ For more complex demands, this also works:
     applyto = build.requires
     applyto = configure.recommends
 
-And that should hopefully be sufficient to cover any conceivable usecase.
+And that should hopefully be sufficient to cover any conceivable use-case.
 
 Also note, we don't do any sort of sanity checking on the module list you provide.
 

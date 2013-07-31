@@ -19,8 +19,8 @@ SYNOPSIS
     This is designed so that it integrates with other automated version
     provisioning.
 
-    If you're hard-coding module deps instead, you will want to place this
-    module *after* other modules that declare deps.
+    If you're hard-coding module dependencies instead, you will want to
+    place this module *after* other modules that declare dependencies.
 
     For instance:
 
@@ -54,7 +54,7 @@ SYNOPSIS
         applyto = configure.recommends
 
     And that should hopefully be sufficient to cover any conceivable
-    usecase.
+    use-case.
 
     Also note, we don't do any sort of sanity checking on the module list
     you provide.
