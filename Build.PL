@@ -28,8 +28,8 @@ my %module_build_args = (
     "Moose" => 0,
     "MooseX::Types::Moose" => 0,
     "perl" => "v5.10.0",
-    "strict" => 0,
-    "warnings" => 0
+    "strict" => "1.07",
+    "warnings" => "1.18"
   },
   "script_files" => [],
   "test_requires" => {

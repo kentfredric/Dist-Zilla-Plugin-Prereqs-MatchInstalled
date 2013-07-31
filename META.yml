@@ -26,8 +26,8 @@ requires:
   Moose: 0
   MooseX::Types::Moose: 0
   perl: v5.10.0
-  strict: 0
-  warnings: 0
+  strict: 1.07
+  warnings: 1.18
 version: 0.1.0
 x_BuiltWith:
   modules:
@@ -315,6 +315,9 @@ x_Dist_Zilla:
             - Test::Pod
             - version
             - Test::CPAN::Meta
+            - Test::CPAN::Changes
+            - strict
+            - warnings
       name: Prereqs::MatchInstalled
       version: ~
     -

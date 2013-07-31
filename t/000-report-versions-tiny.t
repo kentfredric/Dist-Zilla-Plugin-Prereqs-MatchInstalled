@@ -58,14 +58,14 @@ eval { $v .= pmver('Module::Data','any version') };
 eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('MooseX::Types::Moose','any version') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
-eval { $v .= pmver('Test::CPAN::Changes','0.19') };
+eval { $v .= pmver('Test::CPAN::Changes','0.20') };
 eval { $v .= pmver('Test::CPAN::Meta','0.23') };
 eval { $v .= pmver('Test::More','0.98') };
 eval { $v .= pmver('Test::Pod','1.48') };
 eval { $v .= pmver('Test::Pod::Coverage','1.08') };
-eval { $v .= pmver('strict','any version') };
+eval { $v .= pmver('strict','1.07') };
 eval { $v .= pmver('version','0.9902') };
-eval { $v .= pmver('warnings','any version') };
+eval { $v .= pmver('warnings','1.18') };
 
 
 # All done.
