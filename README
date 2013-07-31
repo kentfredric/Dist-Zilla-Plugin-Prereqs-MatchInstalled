@@ -77,28 +77,85 @@ METHODS
   mvp_multivalue_args
     The following properties can be specified multiple times:
 
-    *   applyto
+    *   "applyto"
 
-    *   applyto_relation
+    *   "applyto_relation"
 
-    *   applyto_phase
+    *   "applyto_phase"
 
-    *   modules
+    *   "modules"
 
-  mvp_aliases
+  "mvp_aliases"
     The "module" is an alias for "modules"
 
-  current_version_of
+  "current_version_of"
         $self->current_version_of($package);
 
     Attempts to find the current version of $package.
 
     Returns undef if something went wrong.
 
-  register_prereqs
+  "register_prereqs"
     This is for "Dist::Zilla::Role::PrereqSource", which gets new
     prerequisites from this module.
 
+ATTRIBUTES
+  "applyto_phase"
+    Determines which phases will be checked for module dependencies to
+    upgrade.
+
+        [Prereqs::MatchInstalled]
+        applyto_phase = build
+        applyto_phase = test
+
+    Defaults to:
+
+        build test runtime configure develop
+
+  "applyto_relation"
+    Determines which relations will be checked for module dependencies to
+    upgrade.
+
+        [Prereqs::MatchInstalled]
+        applyto_relation = requires
+
+    Defaults to:
+
+        requires suggests recommends
+
+  "applyto"
+    Determines the total list of "phase"/"relation" combinations which will
+    be checked for dependencies to upgrade.
+
+    If not specified, is built from "applyto_phase" and "applyto_relation"
+
+        [Prereqs::MatchInstalled]
+        applyto = runtime.requires
+        applyto = configure.requires
+
+  "modules"
+    Contains the list of modules that will be searched for in the existing
+    "Prereqs" stash to upgrade.
+
+        [Prereqs::MatchInstalled]
+        module = Foo
+        module = Bar
+        modules = Baz ; this is the same as the previous 2
+
+PRIVATE ATTRIBUTES
+  "_applyto_list"
+    Internal.
+
+    Contains the contents of "applyto" represented as an
+    "ArrayRef[ArrayRef[Str]]"
+
+  "_modules_hash"
+    Contains a copy of "modules" as a hash for easy lookup.
+
+PRIVATE METHODS
+  _build_applyto
+  _build_applyto_list
+  _build__modules_hash
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 

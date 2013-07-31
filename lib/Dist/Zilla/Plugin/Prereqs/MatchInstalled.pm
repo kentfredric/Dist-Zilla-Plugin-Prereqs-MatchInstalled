@@ -16,6 +16,7 @@ use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
 
 
+
 has applyto_phase => (
   is => ro =>,
   isa => ArrayRef [Str] =>,
@@ -23,11 +24,13 @@ has applyto_phase => (
   default => sub { [qw(build test runtime configure develop)] },
 );
 
+
 has applyto_relation => (
   is => ro => isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires recommends suggests)] },
 );
+
 
 has applyto => (
   is => ro =>,
@@ -35,6 +38,8 @@ has applyto => (
   lazy    => 1,
   builder => _build_applyto =>,
 );
+
+
 has _applyto_list => (
   is => ro =>,
   isa => ArrayRef [ ArrayRef [Str] ],
@@ -42,18 +47,22 @@ has _applyto_list => (
   builder => _build__applyto_list =>,
 );
 
+
 has modules => (
   is => ro =>,
   isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [] },
 );
+
+
 has _modules_hash => (
   is      => ro                   =>,
   isa     => HashRef,
   lazy    => 1,
   builder => _build__modules_hash =>,
 );
+
 
 sub _build_applyto {
   my $self = shift;
@@ -66,6 +75,7 @@ sub _build_applyto {
   return \@out;
 }
 
+
 sub _build__applyto_list {
   my $self = shift;
   my @out;
@@ -74,10 +84,11 @@ sub _build__applyto_list {
       push @out, [ "$1", "$2" ];
       next;
     }
-    return $self->log_fatal([q[<<%s>> does not match << <phase>.<relation> >>], $type ]);
+    return $self->log_fatal( [ q[<<%s>> does not match << <phase>.<relation> >>], $type ] );
   }
   return \@out;
 }
+
 
 sub _build__modules_hash {
   my $self = shift;
@@ -134,7 +145,8 @@ sub register_prereqs {
       next if not exists $self->_modules_hash->{$module};
       my $latest = $self->current_version_of($module);
       if ( not defined $latest ) {
-        $self->log([q[You asked for the installed version of %s, and it is a dependency but it is apparently not installed], $module ]);
+        $self->log(
+          [ q[You asked for the installed version of %s, and it is a dependency but it is apparently not installed], $module ] );
         next;
       }
       $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $latest );
@@ -228,21 +240,21 @@ The following properties can be specified multiple times:
 
 =over 4
 
-=item * applyto
+=item * C<applyto>
 
-=item * applyto_relation
+=item * C<applyto_relation>
 
-=item * applyto_phase
+=item * C<applyto_phase>
 
-=item * modules
+=item * C<modules>
 
 =back
 
-=head2 mvp_aliases
+=head2 C<mvp_aliases>
 
 The C<module> is an alias for C<modules>
 
-=head2 current_version_of
+=head2 C<current_version_of>
 
     $self->current_version_of($package);
 
@@ -250,10 +262,74 @@ Attempts to find the current version of C<$package>.
 
 Returns undef if something went wrong.
 
-=head2 register_prereqs
+=head2 C<register_prereqs>
 
 This is for L<< C<Dist::Zilla::Role::PrereqSource>|Dist::Zilla::Role::PrereqSource >>, which gets new prerequisites
 from this module.
+
+=head1 ATTRIBUTES
+
+=head2 C<applyto_phase>
+
+Determines which phases will be checked for module dependencies to upgrade.
+
+    [Prereqs::MatchInstalled]
+    applyto_phase = build
+    applyto_phase = test
+
+Defaults to:
+
+    build test runtime configure develop
+
+=head2 C<applyto_relation>
+
+Determines which relations will be checked for module dependencies to upgrade.
+
+    [Prereqs::MatchInstalled]
+    applyto_relation = requires
+
+Defaults to:
+
+    requires suggests recommends
+
+=head2 C<applyto>
+
+Determines the total list of C<phase>/C<relation> combinations which will be checked for dependencies to upgrade.
+
+If not specified, is built from L<< C<applyto_phase>|/applyto_phase >> and L<< C<applyto_relation>|/applyto_relation >>
+
+    [Prereqs::MatchInstalled]
+    applyto = runtime.requires
+    applyto = configure.requires
+
+=head2 C<modules>
+
+Contains the list of modules that will be searched for in the existing C<Prereqs> stash to upgrade.
+
+    [Prereqs::MatchInstalled]
+    module = Foo
+    module = Bar
+    modules = Baz ; this is the same as the previous 2
+
+=head1 PRIVATE ATTRIBUTES
+
+=head2 C<_applyto_list>
+
+B<Internal.>
+
+Contains the contents of L<< C<applyto>|/applyto >> represented as an C<ArrayRef[ArrayRef[Str]]>
+
+=head2 C<_modules_hash>
+
+Contains a copy of L<< C<modules>|/modules >> as a hash for easy lookup.
+
+=head1 PRIVATE METHODS
+
+=head2 _build_applyto
+
+=head2 _build_applyto_list
+
+=head2 _build__modules_hash
 
 =begin MetaPOD::JSON v1.1.0
 
