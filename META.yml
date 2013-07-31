@@ -316,6 +316,7 @@ x_Dist_Zilla:
             - version
             - Test::CPAN::Meta
             - Test::CPAN::Changes
+            - perl
             - strict
             - warnings
       name: Prereqs::MatchInstalled

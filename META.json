@@ -422,6 +422,7 @@
                      "version",
                      "Test::CPAN::Meta",
                      "Test::CPAN::Changes",
+                     "perl",
                      "strict",
                      "warnings"
                   ]
