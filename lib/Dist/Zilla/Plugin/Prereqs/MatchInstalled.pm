@@ -83,8 +83,13 @@ sub _build__modules_hash {
   my $self = shift;
   return { map { ( $_, 1 ) } @{ $self->modules } };
 }
+
+
 sub mvp_multivalue_args { return qw(applyto applyto_relation applyto_phase modules) }
+
+
 sub mvp_aliases { return { 'module' => 'modules' } }
+
 
 sub current_version_of {
   my ( $self, $package ) = @_;
@@ -111,6 +116,7 @@ around dump_config => sub {
   $config->{ '' . __PACKAGE__ } = $this_config;
   return $config;
 };
+
 
 sub register_prereqs {
   my ($self)  = @_;
@@ -213,6 +219,41 @@ And with a little glue
     module = perl
 
 Does what you want, but you probably shouldn't rely on that =).
+
+=head1 METHODS
+
+=head2 mvp_multivalue_args
+
+The following properties can be specified multiple times:
+
+=over 4
+
+=item * applyto
+
+=item * applyto_relation
+
+=item * applyto_phase
+
+=item * modules
+
+=back
+
+=head2 mvp_aliases
+
+The C<module> is an alias for C<modules>
+
+=head2 current_version_of
+
+    $self->current_version_of($package);
+
+Attempts to find the current version of C<$package>.
+
+Returns undef if something went wrong.
+
+=head2 register_prereqs
+
+This is for L<< C<Dist::Zilla::Role::PrereqSource>|Dist::Zilla::Role::PrereqSource >>, which gets new prerequisites
+from this module.
 
 =begin MetaPOD::JSON v1.1.0
 

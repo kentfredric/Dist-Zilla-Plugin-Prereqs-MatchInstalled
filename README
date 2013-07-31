@@ -73,6 +73,32 @@ SYNOPSIS
 
     Does what you want, but you probably shouldn't rely on that =).
 
+METHODS
+  mvp_multivalue_args
+    The following properties can be specified multiple times:
+
+    *   applyto
+
+    *   applyto_relation
+
+    *   applyto_phase
+
+    *   modules
+
+  mvp_aliases
+    The "module" is an alias for "modules"
+
+  current_version_of
+        $self->current_version_of($package);
+
+    Attempts to find the current version of $package.
+
+    Returns undef if something went wrong.
+
+  register_prereqs
+    This is for "Dist::Zilla::Role::PrereqSource", which gets new
+    prerequisites from this module.
+
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 
