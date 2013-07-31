@@ -282,6 +282,68 @@ x_Dist_Zilla:
       version: 4.300035
     -
       class: Dist::Zilla::Plugin::Prereqs::MatchInstalled
+      config:
+        Dist::Zilla::Plugin::Prereqs::MatchInstalled:
+          _applyto_list:
+            -
+              - build
+              - requires
+            -
+              - build
+              - recommends
+            -
+              - build
+              - suggests
+            -
+              - test
+              - requires
+            -
+              - test
+              - recommends
+            -
+              - test
+              - suggests
+            -
+              - runtime
+              - requires
+            -
+              - runtime
+              - recommends
+            -
+              - runtime
+              - suggests
+            -
+              - configure
+              - requires
+            -
+              - configure
+              - recommends
+            -
+              - configure
+              - suggests
+          applyto:
+            - build.requires
+            - build.recommends
+            - build.suggests
+            - test.requires
+            - test.recommends
+            - test.suggests
+            - runtime.requires
+            - runtime.recommends
+            - runtime.suggests
+            - configure.requires
+            - configure.recommends
+            - configure.suggests
+          applyto_phase:
+            - build
+            - test
+            - runtime
+            - configure
+          applyto_relation:
+            - requires
+            - recommends
+            - suggests
+          modules: []
       name: Prereqs::MatchInstalled
       version: ~
     -

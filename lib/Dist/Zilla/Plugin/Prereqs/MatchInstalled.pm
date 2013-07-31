@@ -55,13 +55,6 @@ has _modules_hash => (
     lazy => 1,
     builder => _build__modules_hash =>,
 );
-has _dep_type_strs => (
-    is => ro =>,
-    isa => 'ArrayRef[Str]' =>,
-    lazy => 1,
-    default => sub { [] },
-);
-
 sub _build_applyto {
     my $self = shift;
     my @out;
@@ -95,7 +88,19 @@ sub current_version_of {
     require Module::Data;
     return Module::Data->new($package)->version;
 }
-
+around dump_config => sub {
+    my ( $orig, $self ) = @_;
+    my $config = $self->$orig;
+    my $this_config = {
+        applyto_phase => $self->applyto_phase,
+        applyto_relation => $self->applyto_relation,
+        applyto          => $self->applyto,
+        _applyto_list    => $self->_applyto_list,
+        modules => $self->modules,
+    };
+    $config->{'' . __PACKAGE__ } = $this_config;
+    return $config;
+};
 sub register_prereqs {
     my ( $self ) = @_;
     my $zilla = $self->zilla;
