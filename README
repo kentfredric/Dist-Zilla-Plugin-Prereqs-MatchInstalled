@@ -3,7 +3,7 @@ NAME
     modules the same as you have installed
 
 VERSION
-    version 0.1.0
+    version 0.1.1
 
 SYNOPSIS
     This is based on the code of
@@ -156,6 +156,7 @@ PRIVATE METHODS
   _build_applyto
   _build_applyto_list
   _build__modules_hash
+  _user_wants_upgrade_on
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 
