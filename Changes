@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
-0.1.1 2013-08-07T22:33:29Z
+0.1.1 2013-08-07T22:34:28Z
  [Dependencies::Added / test requires]
  - Capture::Tiny
  - blib
@@ -16,9 +16,6 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
  [Dependencies::Changed / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.4 → v1.7.5
-
- [Dependencies::Changed / runtime requires]
- - perl v5.10.0 → 5.018000
 
  [Dependencies::Removed / test requires]
  - File::Find
