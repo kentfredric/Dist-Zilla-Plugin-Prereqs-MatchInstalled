@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
 {{$NEXT}}
+
+0.1.1 2013-08-07T22:34:28Z
  [Dependencies::Added / test requires]
  - Capture::Tiny
  - blib
