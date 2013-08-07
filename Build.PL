@@ -27,7 +27,7 @@ my %module_build_args = (
     "Module::Data" => 0,
     "Moose" => 0,
     "MooseX::Types::Moose" => 0,
-    "perl" => "5.018000",
+    "perl" => "v5.10.0",
     "strict" => 0,
     "warnings" => 0
   },
