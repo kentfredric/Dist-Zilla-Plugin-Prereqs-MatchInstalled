@@ -47,7 +47,7 @@
             "Module::Data" : "0",
             "Moose" : "0",
             "MooseX::Types::Moose" : "0",
-            "perl" : "v5.10.0",
+            "perl" : "5.018000",
             "strict" : "0",
             "warnings" : "0"
          }
@@ -480,7 +480,8 @@
                      "Test::Pod",
                      "version",
                      "Test::CPAN::Meta",
-                     "Test::CPAN::Changes"
+                     "Test::CPAN::Changes",
+                     "perl"
                   ]
                }
             },
