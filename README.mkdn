@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 # VERSION
 
-version 0.1.0
+version 0.1.1
 
 # SYNOPSIS
 
@@ -156,6 +156,8 @@ Contains a copy of [`modules`](#modules) as a hash for easy look-up.
 ## \_build\_applyto\_list
 
 ## \_build\_\_modules\_hash
+
+## \_user\_wants\_upgrade\_on
 
     {
         "namespace":"Dist::Zilla::Plugin::Prereqs::MatchInstalled",

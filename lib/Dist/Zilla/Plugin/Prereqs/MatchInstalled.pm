@@ -228,6 +228,15 @@ sub _build__modules_hash {
   return { map { ( $_, 1 ) } @{ $self->modules } };
 }
 
+=p_method _user_wants_upgrade_on
+
+=cut
+
+sub _user_wants_upgrade_on {
+  my ( $self, $module ) = @_;
+  return exists $self->_modules_hash->{$module};
+}
+
 =method mvp_multivalue_args
 
 The following properties can be specified multiple times:
@@ -269,7 +278,6 @@ Returns C<undef> if something went wrong.
 sub current_version_of {
   my ( $self, $package ) = @_;
   if ( $package eq 'perl' ) {
-
     # Thats not going to work, Dave.
     return $];
   }
@@ -304,7 +312,6 @@ sub register_prereqs {
   my $zilla   = $self->zilla;
   my $prereqs = $zilla->prereqs;
   my $guts = $prereqs->cpan_meta_prereqs->{prereqs} || {};
-  my $anted = $self->_modules_hash;
 
   for my $applyto ( @{ $self->_applyto_list } ) {
     my ( $phase, $rel ) = @{$applyto};
@@ -312,7 +319,7 @@ sub register_prereqs {
     next if not exists $guts->{$phase}->{$rel};
     my $reqs = $guts->{$phase}->{$rel}->as_string_hash;
     for my $module ( keys %{$reqs} ) {
-      next if not exists $self->_modules_hash->{$module};
+      next unless $self->_user_wants_upgrade_on($module);
       my $latest = $self->current_version_of($module);
       if ( not defined $latest ) {
         $self->log(

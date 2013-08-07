@@ -1,6 +1,10 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
 {{$NEXT}}
+ [Internals]
+ - Reimplement user module satisfaction code as a method so its easier to
+   override in a child class.
 
 0.1.0 2013-07-31T15:59:15Z
  - First version. Dogfood friendly, but no tests.
+
