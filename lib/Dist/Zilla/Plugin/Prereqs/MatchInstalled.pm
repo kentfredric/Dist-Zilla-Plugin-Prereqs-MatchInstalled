@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Prereqs::MatchInstalled::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.0';
+  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.1';
 }
 
 # ABSTRACT: Depend on versions of modules the same as you have installed
@@ -96,6 +96,12 @@ sub _build__modules_hash {
 }
 
 
+sub _user_wants_upgrade_on {
+  my ( $self, $module ) = @_;
+  return exists $self->_modules_hash->{$module};
+}
+
+
 sub mvp_multivalue_args { return qw(applyto applyto_relation applyto_phase modules) }
 
 
@@ -105,7 +111,6 @@ sub mvp_aliases { return { 'module' => 'modules' } }
 sub current_version_of {
   my ( $self, $package ) = @_;
   if ( $package eq 'perl' ) {
-
     # Thats not going to work, Dave.
     return $];
   }
@@ -134,7 +139,6 @@ sub register_prereqs {
   my $zilla   = $self->zilla;
   my $prereqs = $zilla->prereqs;
   my $guts = $prereqs->cpan_meta_prereqs->{prereqs} || {};
-  my $anted = $self->_modules_hash;
 
   for my $applyto ( @{ $self->_applyto_list } ) {
     my ( $phase, $rel ) = @{$applyto};
@@ -142,7 +146,7 @@ sub register_prereqs {
     next if not exists $guts->{$phase}->{$rel};
     my $reqs = $guts->{$phase}->{$rel}->as_string_hash;
     for my $module ( keys %{$reqs} ) {
-      next if not exists $self->_modules_hash->{$module};
+      next unless $self->_user_wants_upgrade_on($module);
       my $latest = $self->current_version_of($module);
       if ( not defined $latest ) {
         $self->log(
@@ -171,7 +175,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
@@ -330,6 +334,8 @@ Contains a copy of L<< C<modules>|/modules >> as a hash for easy look-up.
 =head2 _build_applyto_list
 
 =head2 _build__modules_hash
+
+=head2 _user_wants_upgrade_on
 
 =begin MetaPOD::JSON v1.1.0
 
