@@ -313,7 +313,7 @@ x_Dist_Zilla:
             - Test::More
             - Dist::Zilla::PluginBundle::Author::KENTNL
       name: '@Author::KENTNL/Prereqs::MatchInstalled'
-      version: ~
+      version: 0.1.1
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -360,7 +360,7 @@ x_Dist_Zilla:
             - Test::CPAN::Changes
             - perl
       name: Prereqs::MatchInstalled
-      version: ~
+      version: 0.1.1
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
