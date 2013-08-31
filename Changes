@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
-0.1.2 2013-08-31T02:45:00Z
+0.1.2 2013-08-31T02:47:25Z
  [!Minor]
  - Bump to get newer Test::Compile test.
 
