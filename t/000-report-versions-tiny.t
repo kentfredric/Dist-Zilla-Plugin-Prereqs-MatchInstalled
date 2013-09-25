@@ -51,6 +51,7 @@ sub pmver {
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.8.3') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('Dist::Zilla::Role::PrereqSource','any version') };
+eval { $v .= pmver('File::Spec','any version') };
 eval { $v .= pmver('IO::Handle','any version') };
 eval { $v .= pmver('IPC::Open3','any version') };
 eval { $v .= pmver('Module::Build','0.4007') };
@@ -65,7 +66,7 @@ eval { $v .= pmver('Test::More','0.98') };
 eval { $v .= pmver('Test::Pod','1.48') };
 eval { $v .= pmver('Test::Pod::Coverage','1.08') };
 eval { $v .= pmver('strict','any version') };
-eval { $v .= pmver('version','0.9903') };
+eval { $v .= pmver('version','0.9904') };
 eval { $v .= pmver('warnings','any version') };
 
 

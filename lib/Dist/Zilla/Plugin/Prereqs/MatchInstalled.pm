@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Prereqs::MatchInstalled::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.2';
+  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.3';
 }
 
 # ABSTRACT: Depend on versions of modules the same as you have installed
@@ -176,7 +176,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 0.1.2
+version 0.1.3
 
 =head1 SYNOPSIS
 
