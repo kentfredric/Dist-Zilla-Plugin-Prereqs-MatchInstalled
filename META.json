@@ -71,7 +71,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : {
          "file" : "lib/Dist/Zilla/Plugin/Prereqs/MatchInstalled.pm",
-         "version" : "v0.1.3"
+         "version" : "v0.1.4"
       }
    },
    "release_status" : "stable",
@@ -86,7 +86,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-MatchInstalled"
       }
    },
-   "version" : "0.1.3",
+   "version" : "0.1.4",
    "x_BuiltWith" : {
       "modules" : {
          "Cwd" : "3.44",
