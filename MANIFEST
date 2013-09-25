@@ -7,6 +7,8 @@ MANIFEST
 META.json
 META.yml
 README
+corpus/fake_dist_01/dist.ini
+corpus/fake_dist_01/lib/E.pm
 dist.ini
 layout/self_structure.dot
 layout/self_structure.png
@@ -19,6 +21,7 @@ maint-travis-ci/yamls/sterile.yaml
 perlcritic.rc
 t/00-compile.t
 t/000-report-versions-tiny.t
+t/01-basic.t
 weaver.ini
 xt/author/critic.t
 xt/release/cpan-changes.t
