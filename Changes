@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
-0.1.4 2013-09-25T21:59:09Z
+0.1.4 2013-09-25T22:27:11Z
  [Bugfix]
  - Always call _version_emulate, which forces Module::MetaData to determine $VERSION
 
