@@ -7,7 +7,13 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
  - Bump to get Test::Compile that isn't broken on Win32
 
  [Dependencies::Added / test requires]
+ - Cwd
+ - File::Copy::Recursive
  - File::Spec
+ - Path::FindDev
+ - Path::Tiny
+ - Test::DZil
+ - Test::Fatal
 
  [Dependencies::Changed / develop requires]
  - version 0.9903 → 0.9904
