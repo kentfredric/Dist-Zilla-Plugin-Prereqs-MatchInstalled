@@ -48,24 +48,31 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('Cwd','any version') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.8.3') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('Dist::Zilla::Role::PrereqSource','any version') };
+eval { $v .= pmver('File::Copy::Recursive','any version') };
+eval { $v .= pmver('File::Spec','any version') };
 eval { $v .= pmver('IO::Handle','any version') };
 eval { $v .= pmver('IPC::Open3','any version') };
 eval { $v .= pmver('Module::Build','0.4007') };
 eval { $v .= pmver('Module::Data','any version') };
 eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('MooseX::Types::Moose','any version') };
+eval { $v .= pmver('Path::FindDev','any version') };
+eval { $v .= pmver('Path::Tiny','any version') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('Test::CPAN::Changes','0.23') };
 eval { $v .= pmver('Test::CPAN::Meta','0.23') };
+eval { $v .= pmver('Test::DZil','any version') };
+eval { $v .= pmver('Test::Fatal','any version') };
 eval { $v .= pmver('Test::Kwalitee','1.08') };
 eval { $v .= pmver('Test::More','0.98') };
 eval { $v .= pmver('Test::Pod','1.48') };
 eval { $v .= pmver('Test::Pod::Coverage','1.08') };
 eval { $v .= pmver('strict','any version') };
-eval { $v .= pmver('version','0.9903') };
+eval { $v .= pmver('version','0.9904') };
 eval { $v .= pmver('warnings','any version') };
 
 
