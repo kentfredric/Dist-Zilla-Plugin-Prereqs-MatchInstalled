@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Prereqs::MatchInstalled::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.3';
+  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.4';
 }
 
 # ABSTRACT: Depend on versions of modules the same as you have installed
@@ -119,7 +119,7 @@ sub current_version_of {
   my $data = Module::Data->new($package);
   return if not $data;
   return if not -e -f $data->path;
-  return $data->version;
+  return $data->_version_emulate;
 }
 around dump_config => sub {
   my ( $orig, $self ) = @_;
@@ -176,7 +176,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 0.1.3
+version 0.1.4
 
 =head1 SYNOPSIS
 

@@ -26,7 +26,7 @@ name: Dist-Zilla-Plugin-Prereqs-MatchInstalled
 provides:
   Dist::Zilla::Plugin::Prereqs::MatchInstalled:
     file: lib/Dist/Zilla/Plugin/Prereqs/MatchInstalled.pm
-    version: v0.1.3
+    version: v0.1.4
 requires:
   Dist::Zilla::Role::PrereqSource: 0
   Module::Data: 0
@@ -39,7 +39,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-MatchInstalled/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-MatchInstalled
   repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-MatchInstalled.git
-version: 0.1.3
+version: 0.1.4
 x_BuiltWith:
   modules:
     Cwd: 3.44
@@ -55,13 +55,13 @@ x_BuiltWith:
     Moose: 2.1005
     MooseX::Types::Moose: 0.38
     Path::FindDev: 0.3.1
-    Path::Tiny: 0.035
+    Path::Tiny: 0.037
     Pod::Coverage::TrustPod: 0.100002
     Test::CPAN::Changes: 0.23
     Test::CPAN::Meta: 0.23
     Test::DZil: 4.300039
     Test::Fatal: 0.013
-    Test::Kwalitee: 1.14
+    Test::Kwalitee: 1.15
     Test::More: 0.98
     Test::Pod: 1.48
     Test::Pod::Coverage: 1.08
@@ -348,7 +348,7 @@ x_Dist_Zilla:
             - Test::More
             - Dist::Zilla::PluginBundle::Author::KENTNL
       name: '@Author::KENTNL/Prereqs::MatchInstalled'
-      version: 0.1.3
+      version: 0.1.4
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -394,7 +394,7 @@ x_Dist_Zilla:
             - Test::CPAN::Meta
             - Test::CPAN::Changes
       name: Prereqs::MatchInstalled
-      version: 0.1.3
+      version: 0.1.4
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
