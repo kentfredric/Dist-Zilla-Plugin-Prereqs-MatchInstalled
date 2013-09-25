@@ -459,7 +459,7 @@
                }
             },
             "name" : "@Author::KENTNL/Prereqs::MatchInstalled",
-            "version" : "0.1.2"
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -515,7 +515,7 @@
                }
             },
             "name" : "Prereqs::MatchInstalled",
-            "version" : "0.1.2"
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
