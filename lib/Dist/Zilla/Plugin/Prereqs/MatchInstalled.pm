@@ -286,7 +286,7 @@ sub current_version_of {
   my $data = Module::Data->new($package);
   return if not $data;
   return if not -e -f $data->path;
-  return $data->version;
+  return $data->_version_emulate;
 }
 around dump_config => sub {
   my ( $orig, $self ) = @_;
