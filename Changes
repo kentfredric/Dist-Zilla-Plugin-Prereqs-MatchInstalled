@@ -8,7 +8,10 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
  - File::Spec
 
  [Dependencies::Changed / develop requires]
- - version 0.9903 → 0.9904 
+ - version 0.9903 → 0.9904
+
+ [Tests]
+ - Now has a basic functionality test
 
 0.1.2 2013-08-31T02:47:34Z
  [!Minor]
