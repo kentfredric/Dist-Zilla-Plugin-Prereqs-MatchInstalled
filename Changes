@@ -1,24 +1,42 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
+0.1.5 2013-11-22T08:56:22Z
+ [00 Maintenance]
+ - Changelog simplified with new Develop Changes stuff.
+
+ [Dependences]
+ - Upgrade Module::Build and Test::More
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - build: ↑1
+ - configure: ↑1
+ - develop: +44 ↑2 -3
+ - test: ↑1 -3
+
+ [Packaging]
+ - Dzil 5 Build.PL prereqs merge implementation.
+
+ [Tests]
+ - Use Test::Compile::PerFile
+ - Reportversions updated = no reporting develop deps
+
 0.1.4 2013-09-25T22:27:11Z
  [Bugfix]
- - Always call _version_emulate, which forces Module::MetaData to determine $VERSION
+ - Always call _version_emulate, which forces Module::MetaData to determine
+   $VERSION
 
 0.1.3 2013-09-25T10:32:16Z
  [Bugfix]
  - Bump to get Test::Compile that isn't broken on Win32
 
- [Dependencies::Added / test requires]
- - Cwd
- - File::Copy::Recursive
- - File::Spec
- - Path::FindDev
- - Path::Tiny
- - Test::DZil
- - Test::Fatal
+ [Dependencies]
+ - Whole bunch of new dependencies to support new test
 
- [Dependencies::Changed / develop requires]
- - version 0.9903 → 0.9904
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - develop: ↑1
+ - test: +7
 
  [Tests]
  - Now has a basic functionality test
@@ -27,44 +45,22 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
  [!Minor]
  - Bump to get newer Test::Compile test.
 
- [Dependencies::Added / develop requires]
- - Test::Kwalitee 1.08
-
- [Dependencies::Added / test requires]
- - IO::Handle
- - IPC::Open3
-
- [Dependencies::Changed / develop requires]
- - Test::CPAN::Changes 0.22 → 0.23
- - version 0.9902 → 0.9903
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.5 → v1.8.3
-
- [Dependencies::Removed / test requires]
- - Capture::Tiny
- - blib
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - develop: +1 ↑3
+ - test: +2 -2
 
 0.1.1 2013-08-07T22:34:28Z
- [Dependencies::Added / test requires]
- - Capture::Tiny
- - blib
+ [Dependencies]
+ - Need Capture Tiny for Test::Compile
+ - Upgrade Module::Build
 
- [Dependencies::Changed / build requires]
- - Module::Build 0.4005 → 0.4007
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4005 → 0.4007
-
- [Dependencies::Changed / develop requires]
- - Test::CPAN::Changes 0.20 → 0.22
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.4 → v1.7.5
-
- [Dependencies::Removed / test requires]
- - File::Find
- - File::Temp
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - build: ↑1
+ - configure: ↑1
+ - develop: ↑2
+ - test: +2 -2
 
  [Internals]
  - Reimplement user module satisfaction code as a method so its easier to
