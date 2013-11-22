@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Prereqs::MatchInstalled::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.4';
+  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.5';
 }
 
 # ABSTRACT: Depend on versions of modules the same as you have installed
@@ -168,7 +168,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -176,7 +176,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 0.1.4
+version 0.1.5
 
 =head1 SYNOPSIS
 
