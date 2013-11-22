@@ -4,11 +4,11 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 # VERSION
 
-version 0.1.4
+version 0.1.5
 
 # SYNOPSIS
 
-This is based on the code of [`Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective`](http://search.cpan.org/perldoc?Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective), but intended for a wider audience.
+This is based on the code of [`Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective`](https://metacpan.org/pod/Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective), but intended for a wider audience.
 
     [Prereqs::MatchInstalled]
     module = My::Module
@@ -90,7 +90,7 @@ Returns `undef` if something went wrong.
 
 ## `register_prereqs`
 
-This is for [`Dist::Zilla::Role::PrereqSource`](http://search.cpan.org/perldoc?Dist::Zilla::Role::PrereqSource), which gets new prerequisites
+This is for [`Dist::Zilla::Role::PrereqSource`](https://metacpan.org/pod/Dist::Zilla::Role::PrereqSource), which gets new prerequisites
 from this module.
 
 # ATTRIBUTES
@@ -122,7 +122,7 @@ Defaults to:
 
 Determines the total list of `phase`/`relation` combinations which will be checked for dependencies to upgrade.
 
-If not specified, is built from [`applyto_phase`](#applyto\_phase) and [`applyto_relation`](#applyto\_relation)
+If not specified, is built from [`applyto_phase`](#applyto_phase) and [`applyto_relation`](#applyto_relation)
 
     [Prereqs::MatchInstalled]
     applyto = runtime.requires
