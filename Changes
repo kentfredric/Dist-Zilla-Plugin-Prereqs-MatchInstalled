@@ -4,6 +4,9 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
  [00 Maintenance]
  - Changelog simplified with new Develop Changes stuff.
 
+ [Dependences]
+ - Upgrade Module::Build and Test::More
+
  [Dependencies::Stats]
  - Dependencies changed, see Changes.deps{,.all,.dev} for details
  - build: ↑1
