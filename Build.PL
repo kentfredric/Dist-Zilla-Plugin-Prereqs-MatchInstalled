@@ -7,17 +7,17 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4202"
+    "Module::Build" => "0.4203"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4202"
+    "Module::Build" => "0.4203"
   },
   "dist_abstract" => "Depend on versions of modules the same as you have installed",
   "dist_author" => [
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-Plugin-Prereqs-MatchInstalled",
-  "dist_version" => "0.1.5",
+  "dist_version" => "0.1.6",
   "license" => "perl",
   "module_name" => "Dist::Zilla::Plugin::Prereqs::MatchInstalled",
   "recommends" => {},
@@ -47,7 +47,7 @@ my %module_build_args = (
 my %fallback_build_requires = (
   "Cwd" => 0,
   "File::Copy::Recursive" => 0,
-  "Module::Build" => "0.4202",
+  "Module::Build" => "0.4203",
   "Path::FindDev" => 0,
   "Path::Tiny" => 0,
   "Test::DZil" => 0,

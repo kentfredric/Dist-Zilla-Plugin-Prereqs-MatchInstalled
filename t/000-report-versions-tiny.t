@@ -51,7 +51,7 @@ sub pmver {
 eval { $v .= pmver('Cwd','any version') };
 eval { $v .= pmver('Dist::Zilla::Role::PrereqSource','any version') };
 eval { $v .= pmver('File::Copy::Recursive','any version') };
-eval { $v .= pmver('Module::Build','0.4202') };
+eval { $v .= pmver('Module::Build','0.4203') };
 eval { $v .= pmver('Module::Data','any version') };
 eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('MooseX::Types::Moose','any version') };
