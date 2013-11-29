@@ -1,6 +1,15 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
-0.1.6 2013-11-29T14:50:30Z
+0.1.6 2013-11-29T14:52:26Z
+ [Dependencies::Noteworthy]
+ - use Module::Build 0.4203
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - build: ↑1
+ - configure: ↑1
+ - develop: ↑1
+
  [Documentation]
  - Reference Prereqs::MatchInstalled::All ( Issue #2 )
 
