@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 # VERSION
 
-version 0.1.5
+version 0.1.6
 
 # SYNOPSIS
 
@@ -12,6 +12,8 @@ This is based on the code of [`Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Lat
 
     [Prereqs::MatchInstalled]
     module = My::Module
+
+If you want to automatically add __all__ modules that are `prereqs`, perhaps instead look at [`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
 
 __NOTE:__ Dependencies will only be upgraded to match the _Installed_ version if they're found elsewhere in the dependency tree.
 
@@ -136,6 +138,8 @@ Contains the list of modules that will be searched for in the existing `Prereqs`
     module = Foo
     module = Bar
     modules = Baz ; this is the same as the previous 2
+
+If you want to automatically add __all__ modules that are `prereqs`, perhaps instead look at [`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
 
 # PRIVATE ATTRIBUTES
 
