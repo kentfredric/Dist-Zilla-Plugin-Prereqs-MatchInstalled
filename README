@@ -3,7 +3,7 @@ NAME
     modules the same as you have installed
 
 VERSION
-    version 0.1.5
+    version 0.1.6
 
 SYNOPSIS
     This is based on the code of
@@ -12,6 +12,9 @@ SYNOPSIS
 
         [Prereqs::MatchInstalled]
         module = My::Module
+
+    If you want to automatically add all modules that are "prereqs", perhaps
+    instead look at "[Prereqs::MatchInstalled::All]"
 
     NOTE: Dependencies will only be upgraded to match the *Installed*
     version if they're found elsewhere in the dependency tree.
@@ -141,6 +144,9 @@ ATTRIBUTES
         module = Foo
         module = Bar
         modules = Baz ; this is the same as the previous 2
+
+    If you want to automatically add all modules that are "prereqs", perhaps
+    instead look at "[Prereqs::MatchInstalled::All]"
 
 PRIVATE ATTRIBUTES
   "_applyto_list"

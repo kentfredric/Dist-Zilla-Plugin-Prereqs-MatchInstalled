@@ -1,4 +1,8 @@
-0.1.5
+0.1.6
+ [Changed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.004000 → 2.004001
+
+0.1.5 2013-11-22T08:56:22Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
  - Dist::Zilla::Plugin::Authority 1.006

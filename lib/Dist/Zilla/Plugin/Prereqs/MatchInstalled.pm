@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Prereqs::MatchInstalled::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.5';
+  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.6';
 }
 
 # ABSTRACT: Depend on versions of modules the same as you have installed
@@ -176,7 +176,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 0.1.5
+version 0.1.6
 
 =head1 SYNOPSIS
 
@@ -184,6 +184,8 @@ This is based on the code of L<< C<Dist::Zilla::Plugin::Author::KENTNL::Prereqs:
 
     [Prereqs::MatchInstalled]
     module = My::Module
+
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if they're found elsewhere in the dependency tree.
 
@@ -315,6 +317,8 @@ Contains the list of modules that will be searched for in the existing C<Prereqs
     module = Foo
     module = Bar
     modules = Baz ; this is the same as the previous 2
+
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 =head1 PRIVATE ATTRIBUTES
 
