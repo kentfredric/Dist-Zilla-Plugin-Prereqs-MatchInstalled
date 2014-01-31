@@ -2,18 +2,99 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Prereqs::MatchInstalled;
-BEGIN {
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.6';
-}
-
+$Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.7';
 # ABSTRACT: Depend on versions of modules the same as you have installed
 
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -25,11 +106,34 @@ has applyto_phase => (
 );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 has applyto_relation => (
   is => ro => isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires recommends suggests)] },
 );
+
+
+
+
+
+
+
+
+
+
+
 
 
 has applyto => (
@@ -40,12 +144,31 @@ has applyto => (
 );
 
 
+
+
+
+
+
+
+
 has _applyto_list => (
   is => ro =>,
   isa => ArrayRef [ ArrayRef [Str] ],
   lazy    => 1,
   builder => _build__applyto_list =>,
 );
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has modules => (
@@ -56,12 +179,20 @@ has modules => (
 );
 
 
+
+
+
+
+
 has _modules_hash => (
   is      => ro                   =>,
   isa     => HashRef,
   lazy    => 1,
   builder => _build__modules_hash =>,
 );
+
+
+
 
 
 sub _build_applyto {
@@ -74,6 +205,9 @@ sub _build_applyto {
   }
   return \@out;
 }
+
+
+
 
 
 sub _build__applyto_list {
@@ -90,10 +224,16 @@ sub _build__applyto_list {
 }
 
 
+
+
+
 sub _build__modules_hash {
   my $self = shift;
   return { map { ( $_, 1 ) } @{ $self->modules } };
 }
+
+
+
 
 
 sub _user_wants_upgrade_on {
@@ -102,10 +242,41 @@ sub _user_wants_upgrade_on {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub mvp_multivalue_args { return qw(applyto applyto_relation applyto_phase modules) }
 
 
+
+
+
+
+
 sub mvp_aliases { return { 'module' => 'modules' } }
+
+
+
+
+
+
+
+
+
 
 
 sub current_version_of {
@@ -133,6 +304,12 @@ around dump_config => sub {
   $config->{ q{} . __PACKAGE__ } = $this_config;
   return $config;
 };
+
+
+
+
+
+
 
 
 sub register_prereqs {
@@ -176,7 +353,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 0.1.6
+version 0.1.7
 
 =head1 SYNOPSIS
 
@@ -360,7 +537,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
