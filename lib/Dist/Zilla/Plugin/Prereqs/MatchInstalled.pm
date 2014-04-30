@@ -285,8 +285,8 @@ sub mvp_aliases { return { 'module' => 'modules' } }
 
 
 sub current_version_of {
-  my ( $self, $package ) = @_;
-  if ( $package eq 'perl' ) {
+  my ( undef, $package ) = @_;
+  if ( 'perl' eq $package ) {
 
     # Thats not going to work, Dave.
     return $];
