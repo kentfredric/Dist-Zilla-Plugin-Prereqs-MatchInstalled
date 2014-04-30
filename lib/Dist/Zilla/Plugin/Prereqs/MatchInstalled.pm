@@ -369,13 +369,13 @@ version 1.000000
 =head1 SYNOPSIS
 
 This is based on the code of
-L<< C<[Author::KENTNL::Prereqs::Latest::Selective]>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>, 
+L<< C<[Author::KENTNL::Prereqs::Latest::Selective]>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>,
 but intended for a wider audience.
 
     [Prereqs::MatchInstalled]
     module = My::Module
 
-If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at 
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at
 L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if they're found elsewhere in the dependency tree.
