@@ -292,11 +292,11 @@ sub current_version_of {
     return $];
   }
   require Module::Data;
-  my $data = Module::Data->new($package);
-  return if not $data;
-  return if not -e $data->path;
-  return if -d $data->path;
-  return $data->_version_emulate;
+  my $module_data = Module::Data->new($package);
+  return if not $module_data;
+  return if not -e $module_data->path;
+  return if -d $module_data->path;
+  return $module_data->_version_emulate;
 }
 around dump_config => sub {
   my ( $orig, $self ) = @_;
