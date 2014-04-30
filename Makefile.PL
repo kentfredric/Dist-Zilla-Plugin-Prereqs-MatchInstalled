@@ -30,12 +30,11 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
-    "Cwd" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Copy::Recursive" => 0,
     "File::Spec::Functions" => 0,
+    "FindBin" => 0,
     "List::Util" => 0,
-    "Path::FindDev" => 0,
     "Path::Tiny" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
@@ -50,16 +49,15 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Cwd" => 0,
   "Dist::Zilla::Role::PrereqSource" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Copy::Recursive" => 0,
   "File::Spec::Functions" => 0,
+  "FindBin" => 0,
   "List::Util" => 0,
   "Module::Data" => 0,
   "Moose" => 0,
   "MooseX::Types::Moose" => 0,
-  "Path::FindDev" => 0,
   "Path::Tiny" => 0,
   "Test::DZil" => 0,
   "Test::Fatal" => 0,
