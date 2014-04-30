@@ -88,7 +88,7 @@ And with a little glue
 
     module = perl
 
-Does what you want, but you probably shouldn't rely on that =).
+Does what you want, but you probably shouldn't rely on that :).
 
 =cut
 
