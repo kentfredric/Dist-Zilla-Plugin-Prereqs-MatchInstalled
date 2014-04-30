@@ -103,6 +103,9 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 
 
+
+
+
 has applyto_phase => (
   is => ro =>,
   isa => ArrayRef [Str] =>,
@@ -163,6 +166,7 @@ has _applyto_list => (
   lazy    => 1,
   builder => _build__applyto_list =>,
 );
+
 
 
 
@@ -364,12 +368,15 @@ version 1.000000
 
 =head1 SYNOPSIS
 
-This is based on the code of L<< C<Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>, but intended for a wider audience.
+This is based on the code of
+L<< C<Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>, 
+but intended for a wider audience.
 
     [Prereqs::MatchInstalled]
     module = My::Module
 
-If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at 
+L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if they're found elsewhere in the dependency tree.
 
@@ -503,7 +510,8 @@ Contains the list of modules that will be searched for in the existing C<Prereqs
     module = Bar
     modules = Baz ; this is the same as the previous 2
 
-If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at
+L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 =head1 PRIVATE ATTRIBUTES
 
