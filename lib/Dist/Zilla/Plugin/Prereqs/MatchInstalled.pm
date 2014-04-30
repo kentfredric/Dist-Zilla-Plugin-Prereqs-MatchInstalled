@@ -5,6 +5,8 @@ package Dist::Zilla::Plugin::Prereqs::MatchInstalled;
 
 # ABSTRACT: Depend on versions of modules the same as you have installed
 
+# AUTHORITY
+
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
