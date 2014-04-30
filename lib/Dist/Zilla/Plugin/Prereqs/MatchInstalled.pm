@@ -102,6 +102,7 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 
 
+
 has applyto_phase => (
   is => ro =>,
   isa => ArrayRef [Str] =>,
@@ -374,7 +375,8 @@ B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if
 
 This is designed so that it integrates with other automated version provisioning.
 
-If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare dependencies.
+If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare
+dependencies.
 
 For instance:
 
