@@ -285,7 +285,7 @@ Returns C<undef> if something went wrong.
 =cut
 
 sub current_version_of {
-  my ( $self, $package ) = @_;
+  my ( undef, $package ) = @_;
   if ( $package eq 'perl' ) {
 
     # Thats not going to work, Dave.
