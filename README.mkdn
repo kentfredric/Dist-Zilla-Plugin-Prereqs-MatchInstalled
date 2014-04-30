@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 # VERSION
 
-version 0.1.6
+version 0.1.7
 
 # SYNOPSIS
 
@@ -13,9 +13,9 @@ This is based on the code of [`Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Lat
     [Prereqs::MatchInstalled]
     module = My::Module
 
-If you want to automatically add __all__ modules that are `prereqs`, perhaps instead look at [`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
+If you want to automatically add **all** modules that are `prereqs`, perhaps instead look at [`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
 
-__NOTE:__ Dependencies will only be upgraded to match the _Installed_ version if they're found elsewhere in the dependency tree.
+**NOTE:** Dependencies will only be upgraded to match the _Installed_ version if they're found elsewhere in the dependency tree.
 
 This is designed so that it integrates with other automated version provisioning.
 
@@ -139,13 +139,13 @@ Contains the list of modules that will be searched for in the existing `Prereqs`
     module = Bar
     modules = Baz ; this is the same as the previous 2
 
-If you want to automatically add __all__ modules that are `prereqs`, perhaps instead look at [`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
+If you want to automatically add **all** modules that are `prereqs`, perhaps instead look at [`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
 
 # PRIVATE ATTRIBUTES
 
 ## `_applyto_list`
 
-__Internal.__
+**Internal.**
 
 Contains the contents of [`applyto`](#applyto) represented as an `ArrayRef[ArrayRef[Str]]`
 
@@ -163,22 +163,13 @@ Contains a copy of [`modules`](#modules) as a hash for easy look-up.
 
 ## \_user\_wants\_upgrade\_on
 
-    {
-        "namespace":"Dist::Zilla::Plugin::Prereqs::MatchInstalled",
-        "interface":"class",
-        "inherits":"Moose::Object",
-        "does":["Dist::Zilla::Role::PrereqSource","Dist::Zilla::Role::Plugin","Dist::Zilla::Role::ConfigDumper"]
-    }
-
-
-
 # AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
