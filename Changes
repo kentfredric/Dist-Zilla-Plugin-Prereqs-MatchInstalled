@@ -13,6 +13,12 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
  - Moving from 0.x.y to 1.xxxxxx
  - This is the primary reason for the 1.x on the box.
 
+ [Deoendencies::Aggregate]
+ - 5.008 : ? → 204
+ - 5.010 : 180 → 183
+ - 5.018 : ? → 170
+ - 5.019 : 166 → 164
+
  [Dependencies::Stats]
  - Dependencies changed since 0.1.6, see Changes.deps{,.all,.dev} for
    details
