@@ -8,18 +8,22 @@ version 1.000000
 
 # SYNOPSIS
 
-This is based on the code of [`Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective`](https://metacpan.org/pod/Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective), but intended for a wider audience.
+This is based on the code of
+[`[Author::KENTNL::Prereqs::Latest::Selective]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective),
+but intended for a wider audience.
 
     [Prereqs::MatchInstalled]
     module = My::Module
 
-If you want to automatically add **all** modules that are `prereqs`, perhaps instead look at [`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
+If you want to automatically add **all** modules that are `prereqs`, perhaps instead look at
+[`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
 
 **NOTE:** Dependencies will only be upgraded to match the _Installed_ version if they're found elsewhere in the dependency tree.
 
 This is designed so that it integrates with other automated version provisioning.
 
-If you're hard-coding module dependencies instead, you will want to place this module _after_ other modules that declare dependencies.
+If you're hard-coding module dependencies instead, you will want to place this module _after_ other modules that declare
+dependencies.
 
 For instance:
 
@@ -139,7 +143,8 @@ Contains the list of modules that will be searched for in the existing `Prereqs`
     module = Bar
     modules = Baz ; this is the same as the previous 2
 
-If you want to automatically add **all** modules that are `prereqs`, perhaps instead look at [`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
+If you want to automatically add **all** modules that are `prereqs`, perhaps instead look at
+[`[Prereqs::MatchInstalled::All]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::MatchInstalled::All)
 
 # PRIVATE ATTRIBUTES
 

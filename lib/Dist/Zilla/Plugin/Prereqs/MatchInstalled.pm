@@ -26,19 +26,23 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 =head1 SYNOPSIS
 
-This is based on the code of L<< C<Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>, but intended for a wider audience.
+This is based on the code of
+L<< C<[Author::KENTNL::Prereqs::Latest::Selective]>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>,
+but intended for a wider audience.
 
 
     [Prereqs::MatchInstalled]
     module = My::Module
 
-If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at
+L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if they're found elsewhere in the dependency tree.
 
 This is designed so that it integrates with other automated version provisioning.
 
-If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare dependencies.
+If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare
+dependencies.
 
 For instance:
 
@@ -172,7 +176,8 @@ Contains the list of modules that will be searched for in the existing C<Prereqs
     module = Bar
     modules = Baz ; this is the same as the previous 2
 
-If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at
+L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 =cut
 
