@@ -329,6 +329,9 @@ sub register_prereqs {
   my $prereqs = $zilla->prereqs;
   my $guts = $prereqs->cpan_meta_prereqs->{prereqs} || {};
 
+  my $failmsg = q[];
+  $failmsg .= q[You asked for the installed version of %s, ];
+  $failmsg .= q[and it is a dependency but it is apparently not installed];
   for my $applyto ( @{ $self->_applyto_list } ) {
     my ( $phase, $rel ) = @{$applyto};
     next if not exists $guts->{$phase};
@@ -338,8 +341,7 @@ sub register_prereqs {
       next unless $self->_user_wants_upgrade_on($module);
       my $latest = $self->current_version_of($module);
       if ( not defined $latest ) {
-        $self->log(
-          [ q[You asked for the installed version of %s, and it is a dependency but it is apparently not installed], $module ] );
+        $self->log( [ $failmsg, $module ] );
         next;
       }
       $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $latest );
