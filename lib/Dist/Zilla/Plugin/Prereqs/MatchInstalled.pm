@@ -369,7 +369,7 @@ version 1.000000
 =head1 SYNOPSIS
 
 This is based on the code of
-L<< C<Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>, 
+L<< C<[Author::KENTNL::Prereqs::Latest::Selective]>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>, 
 but intended for a wider audience.
 
     [Prereqs::MatchInstalled]
@@ -429,7 +429,7 @@ And with a little glue
 
     module = perl
 
-Does what you want, but you probably shouldn't rely on that =).
+Does what you want, but you probably shouldn't rely on that :).
 
 =head1 METHODS
 

@@ -7,8 +7,8 @@ VERSION
 
 SYNOPSIS
     This is based on the code of
-    "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective", but
-    intended for a wider audience.
+    "[Author::KENTNL::Prereqs::Latest::Selective]", but intended for a wider
+    audience.
 
         [Prereqs::MatchInstalled]
         module = My::Module
@@ -74,7 +74,7 @@ SYNOPSIS
 
         module = perl
 
-    Does what you want, but you probably shouldn't rely on that =).
+    Does what you want, but you probably shouldn't rely on that :).
 
 METHODS
   mvp_multivalue_args
