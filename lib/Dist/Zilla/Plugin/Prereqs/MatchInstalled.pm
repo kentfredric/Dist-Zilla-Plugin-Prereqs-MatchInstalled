@@ -7,7 +7,7 @@ $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '1.0.0';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Moose;
+use Moose qw( has around with );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
 
