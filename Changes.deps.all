@@ -26,6 +26,7 @@
  [Added / test requires]
  - ExtUtils::MakeMaker
  - File::Spec::Functions
+ - FindBin
  - List::Util
  - version 0.9908
 
@@ -55,6 +56,10 @@
  - Dist::Zilla::Plugin::PruneCruft
  - Dist::Zilla::Plugin::ReportVersions::Tiny
  - version 0.9904
+
+ [Removed / test requires]
+ - Cwd
+ - Path::FindDev
 
 0.1.6 2013-11-29T14:52:26Z
  [Changed / build requires]
