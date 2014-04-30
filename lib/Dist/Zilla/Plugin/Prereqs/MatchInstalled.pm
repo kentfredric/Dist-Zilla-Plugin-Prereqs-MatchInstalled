@@ -1,3 +1,4 @@
+use 5.008;    # 8 = utf8, 6 = pragmas , our, noparam varmethod, 4 = __PACKAGE__
 use strict;
 use warnings;
 use utf8;
