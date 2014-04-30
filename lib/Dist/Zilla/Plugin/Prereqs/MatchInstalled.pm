@@ -1,19 +1,108 @@
+use 5.008;    # 8 = utf8, 6 = pragmas , our, noparam varmethod, 4 = __PACKAGE__
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Plugin::Prereqs::MatchInstalled;
-BEGIN {
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.6';
-}
-
+$Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '1.000000';
 # ABSTRACT: Depend on versions of modules the same as you have installed
 
-use Moose;
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( has around with );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -25,11 +114,35 @@ has applyto_phase => (
 );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 has applyto_relation => (
-  is => ro => isa => ArrayRef [Str],
+  is      => 'ro',
+  isa     => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires recommends suggests)] },
 );
+
+
+
+
+
+
+
+
+
+
+
 
 
 has applyto => (
@@ -40,12 +153,32 @@ has applyto => (
 );
 
 
+
+
+
+
+
+
+
 has _applyto_list => (
   is => ro =>,
   isa => ArrayRef [ ArrayRef [Str] ],
   lazy    => 1,
   builder => _build__applyto_list =>,
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has modules => (
@@ -56,12 +189,20 @@ has modules => (
 );
 
 
+
+
+
+
+
 has _modules_hash => (
   is      => ro                   =>,
   isa     => HashRef,
   lazy    => 1,
   builder => _build__modules_hash =>,
 );
+
+
+
 
 
 sub _build_applyto {
@@ -74,6 +215,9 @@ sub _build_applyto {
   }
   return \@out;
 }
+
+
+
 
 
 sub _build__applyto_list {
@@ -90,10 +234,16 @@ sub _build__applyto_list {
 }
 
 
+
+
+
 sub _build__modules_hash {
   my $self = shift;
   return { map { ( $_, 1 ) } @{ $self->modules } };
 }
+
+
+
 
 
 sub _user_wants_upgrade_on {
@@ -102,24 +252,56 @@ sub _user_wants_upgrade_on {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub mvp_multivalue_args { return qw(applyto applyto_relation applyto_phase modules) }
+
+
+
+
+
 
 
 sub mvp_aliases { return { 'module' => 'modules' } }
 
 
+
+
+
+
+
+
+
+
+
 sub current_version_of {
-  my ( $self, $package ) = @_;
-  if ( $package eq 'perl' ) {
+  my ( undef, $package ) = @_;
+  if ( 'perl' eq $package ) {
 
     # Thats not going to work, Dave.
     return $];
   }
   require Module::Data;
-  my $data = Module::Data->new($package);
-  return if not $data;
-  return if not -e -f $data->path;
-  return $data->_version_emulate;
+  my $module_data = Module::Data->new($package);
+  return if not $module_data;
+  return if not -e $module_data->path;
+  return if -d $module_data->path;
+  return $module_data->_version_emulate;
 }
 around dump_config => sub {
   my ( $orig, $self ) = @_;
@@ -135,12 +317,21 @@ around dump_config => sub {
 };
 
 
+
+
+
+
+
+
 sub register_prereqs {
   my ($self)  = @_;
   my $zilla   = $self->zilla;
   my $prereqs = $zilla->prereqs;
   my $guts = $prereqs->cpan_meta_prereqs->{prereqs} || {};
 
+  my $failmsg = q[];
+  $failmsg .= q[You asked for the installed version of %s, ];
+  $failmsg .= q[and it is a dependency but it is apparently not installed];
   for my $applyto ( @{ $self->_applyto_list } ) {
     my ( $phase, $rel ) = @{$applyto};
     next if not exists $guts->{$phase};
@@ -150,8 +341,7 @@ sub register_prereqs {
       next unless $self->_user_wants_upgrade_on($module);
       my $latest = $self->current_version_of($module);
       if ( not defined $latest ) {
-        $self->log(
-          [ q[You asked for the installed version of %s, and it is a dependency but it is apparently not installed], $module ] );
+        $self->log( [ $failmsg, $module ] );
         next;
       }
       $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $latest );
@@ -176,22 +366,26 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 0.1.6
+version 1.000000
 
 =head1 SYNOPSIS
 
-This is based on the code of L<< C<Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>, but intended for a wider audience.
+This is based on the code of
+L<< C<[Author::KENTNL::Prereqs::Latest::Selective]>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>,
+but intended for a wider audience.
 
     [Prereqs::MatchInstalled]
     module = My::Module
 
-If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at
+L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if they're found elsewhere in the dependency tree.
 
 This is designed so that it integrates with other automated version provisioning.
 
-If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare dependencies.
+If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare
+dependencies.
 
 For instance:
 
@@ -237,7 +431,7 @@ And with a little glue
 
     module = perl
 
-Does what you want, but you probably shouldn't rely on that =).
+Does what you want, but you probably shouldn't rely on that :).
 
 =head1 METHODS
 
@@ -318,7 +512,8 @@ Contains the list of modules that will be searched for in the existing C<Prereqs
     module = Bar
     modules = Baz ; this is the same as the previous 2
 
-If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at
+L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
 
 =head1 PRIVATE ATTRIBUTES
 
@@ -360,7 +555,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

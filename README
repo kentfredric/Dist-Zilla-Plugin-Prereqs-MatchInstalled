@@ -3,12 +3,12 @@ NAME
     modules the same as you have installed
 
 VERSION
-    version 0.1.6
+    version 1.000000
 
 SYNOPSIS
     This is based on the code of
-    "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective", but
-    intended for a wider audience.
+    "[Author::KENTNL::Prereqs::Latest::Selective]", but intended for a wider
+    audience.
 
         [Prereqs::MatchInstalled]
         module = My::Module
@@ -74,7 +74,7 @@ SYNOPSIS
 
         module = perl
 
-    Does what you want, but you probably shouldn't rely on that =).
+    Does what you want, but you probably shouldn't rely on that :).
 
 METHODS
   mvp_multivalue_args
@@ -167,7 +167,7 @@ AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2013 by Kent Fredric
+    This software is copyright (c) 2014 by Kent Fredric
     <kentfredric@gmail.com>.
 
     This is free software; you can redistribute it and/or modify it under
