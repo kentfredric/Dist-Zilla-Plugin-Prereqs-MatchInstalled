@@ -1,6 +1,18 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
 {{$NEXT}}
+ [00 Minor]
+ - No major code changes, but tooling changes are sufficient that
+   downstream vendors may want to pay attention.
+
+ [01 Tooling Change]
+ - EUMM is now used instead of Module::Build
+ - "Latest" Toolchain deps are now only recommended instead of mandatory
+
+ [02 Version Scheme change]
+ - Moving from 0.x.y to 1.xxxxxx
+ - This is the primary reason for the 1.x on the box.
+
  [Dependencies::Stats]
  - Dependencies changed since 0.1.6, see Changes.deps{,.all,.dev} for
    details
