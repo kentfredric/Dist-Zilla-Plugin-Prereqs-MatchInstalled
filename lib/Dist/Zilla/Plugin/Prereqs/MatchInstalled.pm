@@ -294,7 +294,8 @@ sub current_version_of {
   require Module::Data;
   my $data = Module::Data->new($package);
   return if not $data;
-  return if not -e -f $data->path;
+  return if not -e $data->path;
+  return if -d $data->path;
   return $data->_version_emulate;
 }
 around dump_config => sub {
