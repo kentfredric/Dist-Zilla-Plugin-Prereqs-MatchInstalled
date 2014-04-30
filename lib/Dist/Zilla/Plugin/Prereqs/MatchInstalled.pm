@@ -286,7 +286,7 @@ Returns C<undef> if something went wrong.
 
 sub current_version_of {
   my ( undef, $package ) = @_;
-  if ( $package eq 'perl' ) {
+  if ( 'perl' eq $package ) {
 
     # Thats not going to work, Dave.
     return $];
