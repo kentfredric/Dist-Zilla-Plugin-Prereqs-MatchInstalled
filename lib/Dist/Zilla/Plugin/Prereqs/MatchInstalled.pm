@@ -2,8 +2,10 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Prereqs::MatchInstalled;
-$Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '0.1.7';
+$Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '1.0.0';
 # ABSTRACT: Depend on versions of modules the same as you have installed
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
@@ -353,7 +355,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 0.1.7
+version 1.0.0
 
 =head1 SYNOPSIS
 

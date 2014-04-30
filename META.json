@@ -113,7 +113,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : {
          "file" : "lib/Dist/Zilla/Plugin/Prereqs/MatchInstalled.pm",
-         "version" : "v0.1.7"
+         "version" : "v1.0.0"
       }
    },
    "release_status" : "stable",
@@ -128,7 +128,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-MatchInstalled"
       }
    },
-   "version" : "0.1.7",
+   "version" : "1.0.0",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.140640",
@@ -626,7 +626,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.1.7-source",
+                  "tag" : "1.0.0-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -685,7 +685,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.1.7",
+                  "tag" : "1.0.0",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
