@@ -1,6 +1,10 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 1.000001
+ [Added / develop suggests]
+ - Dist::Zilla::App::Command::bakeini 0.001001
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.016004
+
  [Added / test recommends]
  - CPAN::Meta::Prereqs
 
@@ -12,11 +16,16 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - ExtUtils::MakeMaker 6.96 → 6.98
 
  [Changed / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.013003 → 2.016004
  - Test::CPAN::Changes 0.27 → 0.28
 
  [Changed / test recommends]
  - ExtUtils::MakeMaker 6.96 → 6.98
+
+ [Removed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.013003
+
+ [Removed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
 
 1.000000 2014-04-30T22:34:56Z
  [Added / configure recommends]
