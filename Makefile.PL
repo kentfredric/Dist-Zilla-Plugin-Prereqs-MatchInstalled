@@ -40,7 +40,7 @@ my %WriteMakefileArgs = (
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
     "Test::More" => "0.89",
-    "version" => "0.9908"
+    "version" => "0.77"
   },
   "VERSION" => "1.000001",
   "test" => {
@@ -67,7 +67,7 @@ my %FallbackPrereqs = (
   "Test::More" => "0.89",
   "strict" => 0,
   "utf8" => 0,
-  "version" => "0.9908",
+  "version" => "0.77",
   "warnings" => 0
 );
 

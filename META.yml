@@ -14,7 +14,7 @@ build_requires:
   Test::DZil: '0'
   Test::Fatal: '0'
   Test::More: '0.89'
-  version: '0.9908'
+  version: '0.77'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
 dynamic_config: 0
@@ -564,44 +564,6 @@ x_Dist_Zilla:
           type: requires
       name: Prereqs
       version: '5.019'
-    -
-      class: Dist::Zilla::Plugin::Prereqs::MatchInstalled
-      config:
-        Dist::Zilla::Plugin::Prereqs::MatchInstalled:
-          applyto:
-            - build.requires
-            - build.recommends
-            - build.suggests
-            - test.requires
-            - test.recommends
-            - test.suggests
-            - runtime.requires
-            - runtime.recommends
-            - runtime.suggests
-            - configure.requires
-            - configure.recommends
-            - configure.suggests
-            - develop.requires
-            - develop.recommends
-            - develop.suggests
-          applyto_phase:
-            - build
-            - test
-            - runtime
-            - configure
-            - develop
-          applyto_relation:
-            - requires
-            - recommends
-            - suggests
-          modules:
-            - Dist::Zilla::PluginBundle::Author::KENTNL
-            - Test::Pod
-            - version
-            - Test::CPAN::Meta
-            - Test::CPAN::Changes
-      name: Prereqs::MatchInstalled
-      version: '1.000001'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
