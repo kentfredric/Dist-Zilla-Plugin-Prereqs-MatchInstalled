@@ -4,7 +4,9 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::Plugin::Prereqs::MatchInstalled;
-$Dist::Zilla::Plugin::Prereqs::MatchInstalled::VERSION = '1.000000';
+
+our $VERSION = '1.000001';
+
 # ABSTRACT: Depend on versions of modules the same as you have installed
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -366,7 +368,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 SYNOPSIS
 
