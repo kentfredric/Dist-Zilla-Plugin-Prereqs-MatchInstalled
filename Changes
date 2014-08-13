@@ -7,7 +7,7 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
  [Dependencies::Stats]
  - Dependencies changed since 1.000001, see misc/*.deps* for details
  - configure: ↓1
- - develop: (suggests: ↑1)
+ - develop: +1 (suggests: ↑1)
  - test: -4 (recommends: ↑1 -2)
 
 1.000001 2014-07-18T15:14:08Z
