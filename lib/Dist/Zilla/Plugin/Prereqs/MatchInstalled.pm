@@ -26,74 +26,6 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 =end MetaPOD::JSON
 
-=head1 SYNOPSIS
-
-This is based on the code of
-L<< C<[Author::KENTNL::Prereqs::Latest::Selective]>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>,
-but intended for a wider audience.
-
-
-    [Prereqs::MatchInstalled]
-    module = My::Module
-
-If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at
-L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
-
-B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if they're found elsewhere in the dependency tree.
-
-This is designed so that it integrates with other automated version provisioning.
-
-If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare
-dependencies.
-
-For instance:
-
-    [Prereqs]
-    Foo = 0
-
-    [Prereqs::MatchInstalled]
-    module = Foo
-
-^^ C<Foo> will be upgraded to the version installed.
-
-By default, dependencies that match values of C<module> will be upgraded when they are found in:
-
-    phase: build, test, runtime, configure, develop
-    relation: depends, suggests, recommends
-
-To change this behavior, specify one or more of the following parameters:
-
-    applyto_phase = build
-    applyto_phase = configure
-
-    applyto_relation = requires
-
-etc.
-
-For more complex demands, this also works:
-
-    applyto = build.requires
-    applyto = configure.recommends
-
-And that should hopefully be sufficient to cover any conceivable use-case.
-
-Also note, we don't do any sort of sanity checking on the module list you provide.
-
-For instance,
-
-    module = strict
-    module = warning
-
-Will both upgrade the strict and warnings dependencies on your module, regardless of how daft an idea that may be.
-
-And with a little glue
-
-    module = perl
-
-Does what you want, but you probably shouldn't rely on that :).
-
-=cut
-
 =attr C<applyto_phase>
 
 Determines which phases will be checked for module dependencies to upgrade.
@@ -355,3 +287,71 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 
 1;
+
+=head1 SYNOPSIS
+
+This is based on the code of
+L<< C<[Author::KENTNL::Prereqs::Latest::Selective]>|Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective >>,
+but intended for a wider audience.
+
+
+    [Prereqs::MatchInstalled]
+    module = My::Module
+
+If you want to automatically add B<all> modules that are C<prereqs>, perhaps instead look at
+L<< C<[Prereqs::MatchInstalled::All]>|Dist::Zilla::Plugin::Prereqs::MatchInstalled::All >>
+
+B<NOTE:> Dependencies will only be upgraded to match the I<Installed> version if they're found elsewhere in the dependency tree.
+
+This is designed so that it integrates with other automated version provisioning.
+
+If you're hard-coding module dependencies instead, you will want to place this module I<after> other modules that declare
+dependencies.
+
+For instance:
+
+    [Prereqs]
+    Foo = 0
+
+    [Prereqs::MatchInstalled]
+    module = Foo
+
+^^ C<Foo> will be upgraded to the version installed.
+
+By default, dependencies that match values of C<module> will be upgraded when they are found in:
+
+    phase: build, test, runtime, configure, develop
+    relation: depends, suggests, recommends
+
+To change this behavior, specify one or more of the following parameters:
+
+    applyto_phase = build
+    applyto_phase = configure
+
+    applyto_relation = requires
+
+etc.
+
+For more complex demands, this also works:
+
+    applyto = build.requires
+    applyto = configure.recommends
+
+And that should hopefully be sufficient to cover any conceivable use-case.
+
+Also note, we don't do any sort of sanity checking on the module list you provide.
+
+For instance,
+
+    module = strict
+    module = warning
+
+Will both upgrade the strict and warnings dependencies on your module, regardless of how daft an idea that may be.
+
+And with a little glue
+
+    module = perl
+
+Does what you want, but you probably shouldn't rely on that :).
+
+=cut
