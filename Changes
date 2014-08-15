@@ -1,14 +1,19 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
-1.000002 2014-08-06T23:05:43Z
+1.000002 2014-08-15T19:43:51Z
  [00 Trivial]
- - update reportversions
+ - CPANDAY!
+ - no code changes.
+ - tests augmented.
 
  [Dependencies::Stats]
  - Dependencies changed since 1.000001, see misc/*.deps* for details
  - configure: ↓1
  - develop: +1 (suggests: ↑1)
  - test: -4 (recommends: ↑1 -2)
+
+ [Tests]
+ - update test::reportprereqs
 
 1.000001 2014-07-18T15:14:08Z
  [00 Trivial]
