@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Prereqs::MatchInstalled;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # ABSTRACT: Depend on versions of modules the same as you have installed
 
@@ -14,74 +14,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 use Moose qw( has around with );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -368,7 +300,7 @@ Dist::Zilla::Plugin::Prereqs::MatchInstalled - Depend on versions of modules the
 
 =head1 VERSION
 
-version 1.000001
+version 1.000002
 
 =head1 SYNOPSIS
 
