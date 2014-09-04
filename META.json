@@ -83,6 +83,7 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::Role::PrereqSource" : "0",
+            "Dist::Zilla::Util::ConfigDumper" : "0",
             "Module::Data" : "0",
             "Moose" : "0",
             "MooseX::Types::Moose" : "0",
@@ -179,6 +180,7 @@
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.020",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.020000",
          "Dist::Zilla::Role::PrereqSource" : "5.020",
+         "Dist::Zilla::Util::ConfigDumper" : "0.003004",
          "ExtUtils::MakeMaker" : "6.98",
          "File::Copy::Recursive" : "0.38",
          "File::Spec" : "3.49",

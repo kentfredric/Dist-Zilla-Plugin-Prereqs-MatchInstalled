@@ -13,6 +13,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has around with );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 with 'Dist::Zilla::Role::PrereqSource';
 
 
@@ -237,18 +238,7 @@ sub current_version_of {
   return if -d $module_data->path;
   return $module_data->_version_emulate;
 }
-around dump_config => sub {
-  my ( $orig, $self ) = @_;
-  my $config      = $self->$orig;
-  my $this_config = {
-    applyto_phase    => $self->applyto_phase,
-    applyto_relation => $self->applyto_relation,
-    applyto          => $self->applyto,
-    modules          => $self->modules,
-  };
-  $config->{ q{} . __PACKAGE__ } = $this_config;
-  return $config;
-};
+around dump_config => config_dumper( __PACKAGE__, qw( applyto_phase applyto_relation applyto modules ) );
 
 
 
