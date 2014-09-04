@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
+1.001001 2014-09-04T21:06:34Z
+
 1.001000 2014-09-04T21:06:03Z
  [00 Minor]
  - Internals changed.
