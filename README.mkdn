@@ -170,7 +170,7 @@ Contains a copy of [`modules`](#modules) as a hash for easy look-up.
 
 # AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 

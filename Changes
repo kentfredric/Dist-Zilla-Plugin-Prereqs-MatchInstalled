@@ -4,6 +4,7 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
  [00 Minor]
  - Internals changed.
  - Tests refactored and improved.
+ - metadata
 
  [Dependencies::Stats]
  - Dependencies changed since 1.000002, see misc/*.deps* for details
@@ -13,6 +14,9 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
  [Internals]
  - dump_config implemented in config_dumper
+
+ [Metadata]
+ - set author = kentnl
 
  [Tests]
  - rewritten in dztest and enhanced slightly.
