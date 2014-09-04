@@ -3,7 +3,7 @@ NAME
     modules the same as you have installed
 
 VERSION
-    version 1.000002
+    version 1.001000
 
 SYNOPSIS
     This is based on the code of
@@ -164,7 +164,7 @@ PRIVATE METHODS
   _build__modules_hash
   _user_wants_upgrade_on
 AUTHOR
-    Kent Fredric <kentfredric@gmail.com>
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2014 by Kent Fredric
