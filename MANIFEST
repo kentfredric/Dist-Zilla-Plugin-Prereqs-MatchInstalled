@@ -9,8 +9,6 @@ META.json
 META.yml
 Makefile.PL
 README
-corpus/fake_dist_01/dist.ini
-corpus/fake_dist_01/lib/E.pm
 dist.ini
 dist.ini.meta
 lib/Dist/Zilla/Plugin/Prereqs/MatchInstalled.pm
