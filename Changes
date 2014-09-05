@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
+1.001002 2014-09-05T03:26:32Z
+
 1.001001 2014-09-05T03:26:01Z
  [Bugfix]
  - Don't be lazy, get test data comparison correctly.
