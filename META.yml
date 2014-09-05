@@ -6,6 +6,7 @@ build_requires:
   Dist::Zilla::Util::Test::KENTNL: '1.003001'
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
+  Module::Metadata: '0'
   Test::DZil: '0'
   Test::Fatal: '0'
   Test::More: '0.89'
@@ -21,7 +22,7 @@ name: Dist-Zilla-Plugin-Prereqs-MatchInstalled
 provides:
   Dist::Zilla::Plugin::Prereqs::MatchInstalled:
     file: lib/Dist/Zilla/Plugin/Prereqs/MatchInstalled.pm
-    version: '1.001000'
+    version: '1.001001'
 requires:
   Dist::Zilla::Role::PrereqSource: '0'
   Dist::Zilla::Util::ConfigDumper: '0'
@@ -36,7 +37,7 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-MatchInstalled/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-MatchInstalled
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-MatchInstalled.git
-version: '1.001000'
+version: '1.001001'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -92,6 +93,7 @@ x_BuiltWith:
     ExtUtils::MakeMaker: '6.98'
     File::Spec: '3.49'
     Module::Data: '0.007'
+    Module::Metadata: '1.000024'
     Moose: '2.1211'
     MooseX::Types::Moose: '0.45'
     Pod::Coverage::TrustPod: '0.100003'
@@ -453,7 +455,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 1.001000-source
+          tag: 1.001001-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -507,7 +509,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '1.001000'
+          tag: '1.001001'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local

@@ -1,6 +1,10 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-1.001000
+1.001001
+ [Added / test requires]
+ - Module::Metadata
+
+1.001000 2014-09-04T21:06:03Z
  [Added / runtime requires]
  - Dist::Zilla::Util::ConfigDumper
 

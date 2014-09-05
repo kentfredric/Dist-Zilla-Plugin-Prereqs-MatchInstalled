@@ -1,5 +1,13 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
+1.001001 2014-09-05T03:26:01Z
+ [Bugfix]
+ - Don't be lazy, get test data comparison correctly.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.001000, see misc/*.deps* for details
+ - test: +1
+
 1.001000 2014-09-04T21:06:03Z
  [00 Minor]
  - Internals changed.

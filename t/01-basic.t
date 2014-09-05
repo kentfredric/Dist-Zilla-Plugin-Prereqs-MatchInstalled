@@ -4,6 +4,7 @@ use warnings;
 use Test::More;
 use Test::DZil qw( simple_ini );
 use Dist::Zilla::Util::Test::KENTNL 1.003001 qw( dztest );
+use Module::Metadata;
 use Test::Fatal;
 
 my $test = dztest();
@@ -18,7 +19,9 @@ $test->add_file(
 
 $test->build_ok;
 
-$test->meta_path_deeply( '/prereqs/runtime/requires', { 'Test::More' => $Test::More::VERSION } );
+my $v = Module::Metadata->new_from_module('Test::More');
+
+$test->meta_path_deeply( '/prereqs/runtime/requires', { 'Test::More' => $v->version('Test::More')->stringify } );
 note explain $test->builder->log_messages;
 
 done_testing;

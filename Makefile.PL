@@ -33,11 +33,12 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
+    "Module::Metadata" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "1.001000",
+  "VERSION" => "1.001001",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -51,6 +52,7 @@ my %FallbackPrereqs = (
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Module::Data" => 0,
+  "Module::Metadata" => 0,
   "Moose" => 0,
   "MooseX::Types::Moose" => 0,
   "Test::DZil" => 0,
