@@ -1,6 +1,11 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
-1.001002 2014-09-05T03:27:27Z
+1.001002 2014-09-07T08:54:48Z
+ [Bugfix]
+ - Don't fail on tests if Test::Difference is not installed.
+ - Closes #3
+ - Thanks Sander Lepik for reporting.
+
  [Dependencies::Stats]
  - Dependencies changed since 1.001001, see misc/*.deps* for details
  - develop: (suggests: ↑1)
