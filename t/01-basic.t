@@ -21,7 +21,7 @@ $test->build_ok;
 
 my $v = Module::Metadata->new_from_module('Test::More');
 
-$test->meta_path_deeply( '/prereqs/runtime/requires', { 'Test::More' => $v->version('Test::More')->stringify } );
+$test->meta_path_deeply( '/prereqs/runtime/requires', [ { 'Test::More' => $v->version('Test::More')->stringify } ], );
 note explain $test->builder->log_messages;
 
 done_testing;
