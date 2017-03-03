@@ -1,5 +1,17 @@
 Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
+1.001003 2017-03-03T08:16:12Z 86150e7
+ [Bugfix]
+ - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
+ - Closes https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-MatchInstalled/issues/4
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.001002, see misc/*.deps* for details
+ - configure: +1 (recommends: ↑1)
+ - develop: +14 ↑4 -3 (recommends: +1, suggests: ↑2)
+ - runtime: (recommends: +1)
+ - test: +1 ↓1 (recommends: ↑1 ↓1)
+
 1.001002 2014-09-07T08:54:48Z
  [Bugfix]
  - Don't fail on tests if Test::Difference is not installed.
@@ -173,4 +185,3 @@ Release history for Dist-Zilla-Plugin-Prereqs-MatchInstalled
 
 0.1.0 2013-07-31T15:59:15Z
  - First version. Dogfood friendly, but no tests.
-
