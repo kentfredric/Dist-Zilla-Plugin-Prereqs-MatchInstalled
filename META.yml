@@ -24,7 +24,7 @@ name: Dist-Zilla-Plugin-Prereqs-MatchInstalled
 provides:
   Dist::Zilla::Plugin::Prereqs::MatchInstalled:
     file: lib/Dist/Zilla/Plugin/Prereqs/MatchInstalled.pm
-    version: '1.001003'
+    version: '1.001004'
 recommends:
   Moose: '2.000'
 requires:
@@ -41,4 +41,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-MatchInstalled/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-MatchInstalled
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-MatchInstalled.git
-version: '1.001003'
+version: '1.001004'
